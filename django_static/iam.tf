@@ -7,9 +7,9 @@ resource "aws_iam_access_key" "django_user_key" {
 }
 
 resource "aws_iam_user_policy" "django_user_rw" {
-   name = "${aws_iam_user.django_user.name}-rw"
-   user = "${aws_iam_user.django_user.name}"
-   policy= <<EOF
+    name = "${aws_iam_user.django_user.name}-rw"
+    user = "${aws_iam_user.django_user.name}"
+    policy= <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [

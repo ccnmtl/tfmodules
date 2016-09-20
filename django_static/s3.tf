@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "bucket" {
-   bucket = "${var.prefix}-${var.app}-static-${var.env}"
-	 acl = "public-read"
+    bucket = "${var.prefix}-${var.app}-static-${var.env}"
+    acl = "public-read"
 
     policy = <<EOF
 {
@@ -31,9 +31,9 @@ resource "aws_s3_bucket" "bucket" {
 }
 EOF
 
-   tags {
-      Name = "Static files for ${var.app} ${var.env}"
-			Environment = "${var.env}"
-			Terraform = true
-   }
+    tags {
+        Name = "Static files for ${var.app} ${var.env}"
+        Environment = "${var.env}"
+        Terraform = true
+    }
 }
