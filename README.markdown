@@ -61,3 +61,51 @@ collectstatic && manage.py compress`
 * `access_key` + `secret_key` - credentials for the IAM user
 * `s3_bucket` - name of the S3 bucket created
 * `cloudfront` - cloudfront domain
+
+### vault_storage
+
+S3 storage for Vault
+
+* IAM User
+* S3 bucket
+
+S3 bucket is restricted to just the IAM Vault user
+IAM user only has access to the S3 bucket and no other AWS resources.
+
+#### Example Usage
+
+	module "vault-example" {
+	  source = "github.com/ccnmtl/tfmodules//vault_storage"
+		env = "prod"
+	}
+
+	output "vault-example-access_key" {
+		value = "${module.vault-example.access_key}"
+	}
+
+	output "vault-example-secret_key" {
+		value = "${module.vault-example.secret_key}"
+	}
+
+	output "vault-example-bucket" {
+		value = "${module.vault-example.s3_bucket}"
+	}
+
+Running `terraform apply` results in output like:
+
+    django-example-access_key = AKIA3I7SSEC5TED26RSQ
+    django-example-secret_key = *******************
+    django-example-bucket = ctl-vault-prod
+
+
+Which you can then use to configure Vault.
+
+#### Variables
+
+* `env`
+* `prefix` - defaults to `ctl`
+
+#### Outputs
+
+* `access_key` + `secret_key` - credentials for the IAM user
+* `s3_bucket` - name of the S3 bucket created
