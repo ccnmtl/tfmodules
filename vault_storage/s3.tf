@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "bucket" {
 EOF
 
     tags {
-        Name = "Vault storage (${var.env})"
+        Name = "Vault storage ${var.env}"
         Environment = "${var.env}"
         Terraform = true
     }
