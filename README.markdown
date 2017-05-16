@@ -93,9 +93,9 @@ IAM user only has access to the S3 bucket and no other AWS resources.
 
 Running `terraform apply` results in output like:
 
-    django-example-access_key = AKIA3I7SSEC5TED26RSQ
-    django-example-secret_key = *******************
-    django-example-bucket = ctl-vault-prod
+    vault-example-access_key = AKIA3I7SSEC5TED26RSQ
+    vault-example-secret_key = *******************
+    vault-example-bucket = ctl-vault-prod
 
 
 Which you can then use to configure Vault.
