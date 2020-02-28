@@ -25,6 +25,6 @@ EOF
     tags {
         Name = "Vault storage ${var.env}"
         Environment = "${var.env}"
-        Terraform = true
+        Terraform = "1"
     }
 }
