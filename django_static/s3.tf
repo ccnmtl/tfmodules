@@ -33,7 +33,7 @@ EOF
 
     tags {
         Name = "Static files for ${var.app} ${var.env}"
-        Environment = "${var.env}"
+        Environment = var.env
         Terraform = true
     }
 }
