@@ -24,19 +24,19 @@ Cloudfront distribution configured to use the S3 bucket as origin.
 	}
 
 	output "django-example-access_key" {
-		value = "${module.django-example.access_key}"
+		value = module.django-example.access_key
 	}
 
 	output "django-example-secret_key" {
-		value = "${module.django-example.secret_key}"
+		value = module.django-example.secret_key
 	}
 
 	output "django-example-bucket" {
-		value = "${module.django-example.s3_bucket}"
+		value = module.django-example.s3_bucket
 	}
 
 	output "django-example-cloudfront" {
-		value = "${module.django-example.cloudfront}"
+		value = module.django-example.cloudfront
 	}
 
 Running `terraform apply` results in output like:
@@ -80,15 +80,15 @@ IAM user only has access to the S3 bucket and no other AWS resources.
 	}
 
 	output "vault-example-access_key" {
-		value = "${module.vault-example.access_key}"
+		value = module.vault-example.access_key
 	}
 
 	output "vault-example-secret_key" {
-		value = "${module.vault-example.secret_key}"
+		value = module.vault-example.secret_key
 	}
 
 	output "vault-example-bucket" {
-		value = "${module.vault-example.s3_bucket}"
+		value = module.vault-example.s3_bucket
 	}
 
 Running `terraform apply` results in output like:
